@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Výtisk - Avionsalon</title>
+  </head>
+  <body>
+    <h1>Objednávkový formulář pro nákup letenek</h1>
+    <fieldset>
+      <legend>Destinace a počet letenek:</legend>
+
+      <label for="destination_select">Destinace:</label>
+      <select name="destination" id="destination_select" class="letenky_vyber">
+        <option value="500">Praha (500,-Kč)</option>
+        <option value="3000">Frankfurt (3.000,-Kč)</option>
+        <option value="15000">New York (15.000,-Kč)</option>
+        <option value="30000">Sydney (30.000,-Kč)</option>
+      </select>
+
+      <label for="tickets-select">Počet pasažérů:</label>
+      <select name="tickets" id="tickets-select">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+        <option value="5">5</option>
+        <option value="6">6</option>
+        <option value="7">7</option>
+        <option value="8">8</option>
+        <option value="9">9</option>
+        <option value="10">10</option>
+      </select>
+
+      <div>
+        <input type="checkbox" id="return" name="return_ticket" />
+        <label for="return">Zpáteční letenka</label>
+      </div>
+    </fieldset>
+
+    <fieldset>
+      <legend>Třída</legend>
+      <div>
+        <input
+          type="radio"
+          class="class_check"
+          id="radio_economy"
+          name="class"
+          value="1"
+          checked
+        />
+        <label for="radio_economy">Economy class</label>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          class="class_check"
+          id="radio_business"
+          name="class"
+          value="1.25"
+        />
+        <label for="radio_business">Business class (+25%)</label>
+      </div>
+
+      <div>
+        <input
+          type="radio"
+          class="class_check"
+          id="radio_royal"
+          name="class"
+          value="1.5"
+        />
+        <label for="radio_royal">Royal class (+50%)</label>
+      </div>
+    </fieldset>
+    <fieldset>
+      <legend>Kalkulace ceny</legend>
+
+      <label for="text_budged">Váš rozpočet:</label>
+
+      <input
+        type="text"
+        id="text_budged"
+        name="budged"
+        required
+        minlength="4"
+        maxlength="8"
+        size="10"
+      />
+      <input type="button" value="Ověřit rozpočet" class="btn-overit" /> <br />
+      <label for="totprice" value="0">Celková cena:</label>
+
+      <input
+        type="text"
+        id="totprice"
+        name="price"
+        required
+        minlength="4"
+        maxlength="8"
+        size="10"
+      />
+      <br />
+      <p>Rozpočet na letenku je <span id="budget_result"></span></p>
+    </fieldset>
+
+    <!-- <label for="story">Poznámka:</label> -->
+    <fieldset>
+      <legend>Poznámka</legend>
+      <textarea
+        id="story"
+        name="story"
+        rows="10"
+        cols="40"
+        placeholder="Zde napište vaše požadavky"
+      ></textarea>
+    </fieldset>
+    <script src="./script.js"></script>
+  </body>
+</html>
